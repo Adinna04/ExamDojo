@@ -1,0 +1,262 @@
+/* frontend/src/styles/Roadmap.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+
+:root {
+  --green: #58cc02;
+  --green-dark: #46a302;
+  --yellow: #ffd900;
+  --blue: #1cb0f6;
+
+  --bg: #f7fff1;
+  --card: #ffffff;
+  --text: #24313f;
+  --muted: #6b7280;
+  --border: #e8f2dc;
+
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.roadmap-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #ffffff 0%, #f7fff1 45%, #eefddb 100%);
+  padding: 42px 18px 90px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.loading-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 22px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.roadmap-header {
+  max-width: 920px;
+  margin: 0 auto 34px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  border: none;
+  background: white;
+  color: var(--text);
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+}
+
+.tiny-label {
+  color: var(--green);
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.roadmap-header h1 {
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1;
+  color: var(--text);
+}
+
+/* ===========================
+   TRACK
+=========================== */
+.roadmap-track {
+  max-width: 920px;
+  margin: auto;
+  position: relative;
+  padding: 10px 0;
+}
+
+.roadmap-track::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    #dff6c8,
+    #c8f19a,
+    #dff6c8
+  );
+}
+
+/* ===========================
+   ROWS
+=========================== */
+.roadmap-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.roadmap-row.left {
+  justify-content: flex-start;
+}
+
+.roadmap-row.right {
+  justify-content: flex-end;
+}
+
+.roadmap-row.left .node-info {
+  order: 2;
+}
+
+.roadmap-row.right .node-info {
+  order: 1;
+  text-align: right;
+}
+
+.roadmap-row.left .path-node {
+  order: 1;
+}
+
+.roadmap-row.right .path-node {
+  order: 2;
+}
+
+/* ===========================
+   NODE
+=========================== */
+.path-node {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 34px;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+  transition: 0.22s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.path-node:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.path-node.open {
+  background: linear-gradient(
+    180deg,
+    #7df51f,
+    var(--green)
+  );
+  color: white;
+}
+
+.path-node.done {
+  background: linear-gradient(
+    180deg,
+    #ffd900,
+    #ffbe00
+  );
+  color: white;
+}
+
+.path-node.locked {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.node-emoji {
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.1));
+}
+
+/* ===========================
+   INFO CARD
+=========================== */
+.node-info {
+  width: min(340px, 46vw);
+  background: white;
+  border-radius: 24px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow);
+}
+
+.node-info h3 {
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.node-info p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.star-row {
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffb800;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 760px) {
+  .roadmap-track::before {
+    left: 46px;
+    transform: none;
+  }
+
+  .roadmap-row,
+  .roadmap-row.left,
+  .roadmap-row.right {
+    justify-content: flex-start;
+    gap: 16px;
+    margin: 22px 0;
+  }
+
+  .roadmap-row .path-node,
+  .roadmap-row.left .path-node,
+  .roadmap-row.right .path-node {
+    order: 1;
+  }
+
+  .roadmap-row .node-info,
+  .roadmap-row.left .node-info,
+  .roadmap-row.right .node-info {
+    order: 2;
+    text-align: left;
+    width: calc(100% - 120px);
+  }
+
+  .path-node {
+    width: 74px;
+    height: 74px;
+    font-size: 28px;
+  }
+
+  .node-info h3 {
+    font-size: 18px;
+  }
+}

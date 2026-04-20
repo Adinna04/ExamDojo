@@ -1,0 +1,192 @@
+/* =============================================
+   LEADERBOARD PAGE CONTAINER
+   ============================================= */
+.leaderboard-page {
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #58cc02; }
+
+/* FILTER PILLS */
+.lb-filter-pills {
+  background: #e2e8f0;
+  padding: 4px;
+  border-radius: 1rem;
+  display: flex;
+  gap: 4px;
+}
+.lb-filter-pills button {
+  padding: 6px 16px;
+  border-radius: 0.75rem;
+  font-size: 11px;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #64748b;
+  transition: all 0.2s;
+}
+.lb-filter-pills button.active {
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+/* HERO RANK CARD */
+.user-rank-hero {
+  background: linear-gradient(135deg, #58cc02, #22c55e);
+  border-radius: 2.5rem;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  box-shadow: 0 20px 25px -5px rgba(88,204,2,0.2);
+}
+
+.hero-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 1.25rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  overflow: hidden;
+}
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* PODIUM STYLING */
+.podium-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  min-height: 240px;
+}
+
+.podium-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  position: relative;
+}
+
+.podium-avatar-wrap {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 10px;
+}
+
+.podium-avatar-main {
+  width: 64px;
+  height: 64px;
+  background: white;
+  border-radius: 1.25rem;
+  border: 4px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.podium-rank-1 .podium-avatar-main { width: 85px; height: 85px; border-color: #fbbf24; }
+.podium-rank-0 .podium-avatar-main { border-color: #94a3b8; }
+.podium-rank-2 .podium-avatar-main { border-color: #d97706; }
+
+.crown-icon {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  animation: bounce 2s infinite;
+}
+
+.rank-tag {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 10px;
+  border-radius: 8px;
+}
+
+.podium-info .name { font-weight: 900; color: #1e293b; font-size: 14px; text-align: center; }
+.podium-info .xp { color: #58cc02; font-weight: 900; font-size: 13px; text-align: center; }
+
+.podium-stand {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  margin-top: 10px;
+}
+.stand-1 { height: 100px; background: #fef3c7; border: 2px solid #fbbf24; }
+.stand-0 { height: 60px; background: #f1f5f9; border: 2px solid #cbd5e1; }
+.stand-2 { height: 40px; background: #fff7ed; border: 2px solid #ffedd5; }
+
+/* LIST SECTION */
+.leaderboard-list {
+  background: white;
+  border-radius: 2.5rem;
+  padding: 15px;
+  border: 2px solid #f1f5f9;
+  border-bottom: 10px solid #f1f5f9;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 1.5rem;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+}
+.list-item:hover { background: #f8fafc; }
+.list-item.is-me { background: #f0fdf4; border: 2px solid #58cc02; }
+
+.list-rank { width: 40px; font-weight: 900; color: #64748b; font-size: 16px; }
+.list-avatar {
+  width: 44px;
+  height: 44px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  overflow: hidden;
+}
+.list-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.list-name { flex: 1; }
+.list-right { display: flex; align-items: center; gap: 15px; }
+
+.streak-badge { background: #fff7ed; color: #ea580c; padding: 4px 10px; border-radius: 10px; font-weight: 800; font-size: 12px; }
+.xp-badge { font-weight: 900; color: #58cc02; font-size: 18px; }
+.xp-badge span { font-size: 10px; color: #94a3b8; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}

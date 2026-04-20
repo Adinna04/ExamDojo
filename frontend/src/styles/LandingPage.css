@@ -1,0 +1,519 @@
+/* ======================================
+   EXAMDOJO CUTE DUOLINGO LANDING PAGE
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+
+:root {
+  --green: #58cc02;
+  --green-dark: #46a302;
+  --green-soft: #e8ffd5;
+
+  --blue: #1cb0f6;
+  --yellow: #ffd900;
+  --pink: #ff7ac6;
+
+  --text: #24313f;
+  --muted: #6b7280;
+
+  --white: #ffffff;
+  --bg: #f7fff1;
+  --card: #ffffff;
+  --border: #e5f2d8;
+
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.05);
+
+  --radius: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===============================
+   NAVBAR
+=============================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--green);
+}
+
+.nav-logo span {
+  color: var(--yellow);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  color: var(--text);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+.nav-link:hover {
+  background: white;
+}
+
+.nav-btn {
+  background: var(--green);
+  color: white;
+  font-weight: 800;
+  padding: 12px 20px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-btn:hover {
+  background: var(--green-dark);
+}
+
+/* ===============================
+   HERO
+=============================== */
+.hero {
+  min-height: 100vh;
+  padding: 130px 40px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: white;
+  color: var(--green);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-left h1 {
+  font-size: clamp(46px, 6vw, 76px);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.hero-left h1 span {
+  color: var(--green);
+}
+
+.hero-sub {
+  margin-top: 18px;
+  max-width: 580px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: var(--green-dark);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.hero-mini-stats {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mini-card {
+  background: white;
+  border-radius: 20px;
+  padding: 14px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.mini-card span {
+  font-size: 24px;
+}
+
+.mini-card strong {
+  display: block;
+  font-size: 18px;
+}
+
+.mini-card small {
+  color: var(--muted);
+}
+
+/* ===============================
+   MASCOT CARD
+=============================== */
+.mascot-card {
+  background: white;
+  border-radius: 32px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 430px;
+  margin: auto;
+}
+
+.mascot-face {
+  font-size: 72px;
+  margin-bottom: 10px;
+}
+
+.mascot-card h3 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.mascot-card p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.progress-wrap {
+  margin-top: 22px;
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.progress-bar {
+  height: 14px;
+  background: #edf2e7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(90deg, var(--green), #7df51f);
+}
+
+.reward-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-weight: 800;
+}
+
+/* ===============================
+   BUBBLES
+=============================== */
+.hero-bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.bubble1 {
+  width: 280px;
+  height: 280px;
+  background: var(--green);
+  top: 90px;
+  left: -70px;
+}
+
+.bubble2 {
+  width: 220px;
+  height: 220px;
+  background: var(--yellow);
+  right: -60px;
+  top: 120px;
+}
+
+.bubble3 {
+  width: 200px;
+  height: 200px;
+  background: var(--blue);
+  bottom: 50px;
+  left: 48%;
+}
+
+/* ===============================
+   STATS STRIP
+=============================== */
+.stats-strip {
+  padding: 28px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.strip-card {
+  background: white;
+  border-radius: 24px;
+  padding: 26px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.strip-card h3 {
+  font-size: 34px;
+  color: var(--green);
+}
+
+.strip-card p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ===============================
+   SECTIONS
+=============================== */
+.tracks,
+.features,
+.cta-box {
+  padding: 90px 40px;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.section-head span {
+  color: var(--green);
+  font-weight: 900;
+}
+
+.section-head h2 {
+  margin-top: 10px;
+  font-size: 44px;
+  font-weight: 900;
+}
+
+.section-head p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* ===============================
+   TRACKS
+=============================== */
+.track-grid {
+  margin-top: 40px;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.track-card {
+  background: white;
+  padding: 28px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.track-icon {
+  font-size: 46px;
+}
+
+.track-card h3 {
+  margin-top: 14px;
+  font-size: 24px;
+}
+
+.track-card p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* ===============================
+   FEATURES
+=============================== */
+.feature-grid {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 28px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.feature-card span {
+  font-size: 42px;
+}
+
+.feature-card h4 {
+  margin-top: 12px;
+  font-size: 22px;
+}
+
+.feature-card p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+/* ===============================
+   CTA
+=============================== */
+.cta-box {
+  text-align: center;
+}
+
+.cta-box h2 {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.cta-box p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.large-btn {
+  margin-top: 26px;
+  display: inline-block;
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+.footer {
+  background: white;
+  padding: 28px 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer p,
+.footer span {
+  color: var(--muted);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 1100px) {
+  .hero-grid,
+  .track-grid,
+  .feature-grid,
+  .stats-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-grid,
+  .track-grid,
+  .feature-grid,
+  .stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left h1,
+  .cta-box h2,
+  .section-head h2 {
+    font-size: 38px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero,
+  .tracks,
+  .features,
+  .cta-box {
+    padding-inline: 20px;
+  }
+}

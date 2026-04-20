@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F9FEF0] text-slate-900 antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-black tracking-tight;
+  }
+}
+
+@layer components {
+  /* The "Squishy" Duolingo Button Effect */
+  .btn-primary {
+    @apply relative px-8 py-4 bg-primary-500 text-white rounded-2xl font-black 
+           border-b-4 border-primary-700 active:border-b-0 active:translate-y-[2px]
+           transition-all duration-75 text-center inline-block;
+  }
+
+  .btn-secondary {
+    @apply relative px-8 py-4 bg-white text-slate-700 rounded-2xl font-black 
+           border-2 border-b-4 border-slate-200 active:border-b-2 active:translate-y-[2px]
+           transition-all duration-75 text-center inline-block;
+  }
+
+  /* Gamified Card Style */
+  .card-gamified {
+    @apply bg-white rounded-[2rem] border-2 border-b-8 border-slate-100 
+           hover:border-primary-200 transition-all duration-300 p-6;
+  }
+
+  /* XP Bar Shimmer Animation */
+  .xp-bar-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes timerDanger {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); color: #ef4444; }
+}

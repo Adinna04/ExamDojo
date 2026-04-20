@@ -1,0 +1,266 @@
+/* =============================================
+   PROFILE MAIN & LAYOUT
+   ============================================= */
+.profile-main {
+  padding: 28px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ALERTS */
+.profile-success,
+.profile-error {
+  padding: 13px 18px;
+  border-radius: var(--r-lg);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 16px;
+  animation: fadeUp 0.3s var(--ease-out) both;
+}
+
+.profile-success {
+  background: var(--green4);
+  border: 1.5px solid var(--green3);
+  color: var(--green);
+}
+
+.profile-error {
+  background: var(--red2);
+  border: 1.5px solid #fca5a5;
+  color: var(--red);
+}
+
+/* =============================================
+   HEADER & AVATAR (ASSIGNMENT 7 FIX)
+   ============================================= */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.4s var(--ease-out) both;
+}
+
+.profile-avatar-big {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--yellow2));
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--green3);
+  position: relative;
+  overflow: hidden; /* Bahar nikalti hui image ko kaatne ke liye */
+  animation: xpPulse 3s ease-in-out infinite;
+}
+
+/* FIX: Image styling within the avatar */
+.profile-avatar-big img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Photo ko stretch nahi hone dega */
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+
+.profile-header-name {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.profile-header-email {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.profile-header-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.profile-badge {
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  background: var(--green4);
+  color: var(--green);
+  border: 1px solid var(--green3);
+}
+
+/* =============================================
+   STATS ROW
+   ============================================= */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-stat-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.2s var(--ease);
+  animation: fadeUp 0.5s var(--ease-out) both;
+}
+
+.profile-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green3);
+}
+
+.profile-stat-num {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.profile-stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* =============================================
+   PROFILE CARDS & INFO
+   ============================================= */
+.profile-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 24px;
+  animation: fadeUp 0.5s var(--ease-out) 0.1s both;
+}
+
+.profile-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.info-label { font-size: 13px; color: var(--muted); font-weight: 600; }
+.info-value { font-size: 14px; font-weight: 700; color: var(--text); }
+
+/* =============================================
+   XP PROGRESS BAR
+   ============================================= */
+.xp-progress-section { margin-bottom: 16px; }
+
+.xp-progress-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.xp-progress-bar {
+  height: 14px;
+  background: var(--green4);
+  border-radius: var(--r-full);
+  overflow: hidden;
+  border: 1px solid var(--green3);
+}
+
+.xp-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--green2));
+  border-radius: var(--r-full);
+  transition: width 1.2s var(--ease-out);
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.edit-btn {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: var(--r-full);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.18s var(--ease);
+}
+
+.edit-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =============================================
+   ACHIEVEMENTS
+   ============================================= */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.achievement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border-radius: var(--r-lg);
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  text-align: center;
+  transition: all 0.2s var(--ease);
+}
+
+.achievement.unlocked {
+  background: var(--green4);
+  border-color: var(--green3);
+}
+
+.achievement-icon { font-size: 24px; }
+.achievement-name { font-size: 11px; font-weight: 700; color: var(--green); }
